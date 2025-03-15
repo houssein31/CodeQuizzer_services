@@ -20,7 +20,7 @@ public class JwtService {
 
     @Value("${application.security.jwt.expiration}")
     private Long jwtExpiration;
-    @Value("${application.security.jwt.secret-key")
+    @Value("${application.security.jwt.secret-key}")
     private String secretKey;
 
     public String extractUsername(String token) {
@@ -45,7 +45,7 @@ public class JwtService {
         return generateToken(new HashMap<>(), userDetails);
     }
 
-    private String generateToken(HashMap<String, Object> claims, UserDetails userDetails) {
+    public String generateToken(HashMap<String, Object> claims, UserDetails userDetails) {
 
         return buildToken(claims, userDetails, jwtExpiration);
     }
